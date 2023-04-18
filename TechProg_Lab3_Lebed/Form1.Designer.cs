@@ -42,7 +42,7 @@
             median_rbutton = new RadioButton();
             evds_rbutton = new RadioButton();
             runButton = new Button();
-            saveArray_button = new Button();
+            saveArrayToJson_button = new Button();
             saveOper_button = new Button();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
@@ -192,15 +192,17 @@
             runButton.TabIndex = 8;
             runButton.Text = "Run";
             runButton.UseVisualStyleBackColor = true;
+            runButton.Click += runButton_Click;
             // 
-            // saveArray_button
+            // saveArrayToJson_button
             // 
-            saveArray_button.Location = new Point(131, 22);
-            saveArray_button.Name = "saveArray_button";
-            saveArray_button.Size = new Size(126, 23);
-            saveArray_button.TabIndex = 9;
-            saveArray_button.Text = "Save Array";
-            saveArray_button.UseVisualStyleBackColor = true;
+            saveArrayToJson_button.Location = new Point(131, 22);
+            saveArrayToJson_button.Name = "saveArrayToJson_button";
+            saveArrayToJson_button.Size = new Size(126, 23);
+            saveArrayToJson_button.TabIndex = 9;
+            saveArrayToJson_button.Text = "Save Array";
+            saveArrayToJson_button.UseVisualStyleBackColor = true;
+            saveArrayToJson_button.Click += saveArrayToJson_button_Click;
             // 
             // saveOper_button
             // 
@@ -215,7 +217,7 @@
             // 
             groupBox3.Controls.Add(runButton);
             groupBox3.Controls.Add(saveOper_button);
-            groupBox3.Controls.Add(saveArray_button);
+            groupBox3.Controls.Add(saveArrayToJson_button);
             groupBox3.Location = new Point(9, 246);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(264, 82);
@@ -291,7 +293,7 @@
         private RadioButton median_rbutton;
         private RadioButton evds_rbutton;
         private Button runButton;
-        private Button saveArray_button;
+        private Button saveArrayToJson_button;
         private Button saveOper_button;
         private Label label3;
         private Label label2;

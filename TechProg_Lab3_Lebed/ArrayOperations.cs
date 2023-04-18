@@ -12,7 +12,7 @@ namespace TechProg_Lab3_Lebed
         public static int[] GenerateArray(int n, int max, int min)
         {
             int[] arr = new int[n];
-            if(min < max) { int a = min; min = max; max = a; }
+            if(min > max) { int a = min; min = max; max = a; }
             if (min == max) { min = 0; max = 100; }
             Random rand = new Random(DateTime.Now.Millisecond);
             for(int i = 0; i < n; i++)

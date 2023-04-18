@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Forms.VisualStyles;
 
 namespace TechProg_Lab3_Lebed
 {
@@ -57,12 +59,13 @@ namespace TechProg_Lab3_Lebed
             }
         }
 
-        public async static void OpenArrayFromJson(string fname, int[] arr)
+        public async static Task<int[]> OpenArrayFromJson(string fname, int[] arr)
         {
             using (FileStream fs = new FileStream(fname, FileMode.Open, FileAccess.Read))
             {
                 arr = await JsonSerializer.DeserializeAsync<int[]>(fs);
             }
+            return arr;
         }
 
         public async static void SaveResultsToJson(string fname, ArrayResults arr_res)

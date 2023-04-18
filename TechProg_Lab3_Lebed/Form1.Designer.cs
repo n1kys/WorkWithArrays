@@ -97,6 +97,7 @@
             openArray.TabIndex = 4;
             openArray.Text = "Open Array";
             openArray.UseVisualStyleBackColor = true;
+            openArray.Click += openArray_Click;
             // 
             // dataGridView1
             // 
@@ -212,6 +213,7 @@
             saveOper_button.TabIndex = 10;
             saveOper_button.Text = "Save operation";
             saveOper_button.UseVisualStyleBackColor = true;
+            saveOper_button.Click += saveOper_button_Click;
             // 
             // groupBox3
             // 

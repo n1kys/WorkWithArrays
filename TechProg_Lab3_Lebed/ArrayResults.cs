@@ -15,6 +15,10 @@ namespace TechProg_Lab3_Lebed
         public double dispersion { get; set; }
 
         public double median { get; set; }
+
+        public int primeNumbers { get; set; }
+
+        public int[] countOdd { get; set; }
     
         public ArrayResults()
         {

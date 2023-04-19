@@ -38,6 +38,7 @@ namespace TechProg_Lab3_Lebed
         {
             double average = arr.Average();
             return arr.Select(x => Math.Pow(x - average, 2)).Average();
+            
         }
 
         public static double FindMedian(int[] arr)
@@ -74,6 +75,21 @@ namespace TechProg_Lab3_Lebed
             {
                 await JsonSerializer.SerializeAsync<ArrayResults>(fs, arr_res);
             }
+        }
+
+        public static int[] FindOddNumbersSumAndCount(int[] arr, int c)
+        {
+            int[] result = new int[2];
+            result[0] = arr.Where((num, index) => num > c && index % 2 != 0).Sum();
+            result[1] = arr.Where((num, index) => num > c && index % 2 != 0).Count(); 
+            return result;
+        }
+
+        public static int FindNumberOfPrimeNumbers(int[] arr)
+        {
+            return Enumerable.Range(2, arr.Max() - 1)
+                .Where(n => Enumerable.Range(2, (int)Math.Sqrt(n) - 1).All(i => n % i != 0))
+                .Count(n => arr.Contains(n));
         }
 
         public static void AddInfoToDataGrid(ref DataGridView dgv, int[] arr)
